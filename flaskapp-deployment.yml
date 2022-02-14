@@ -18,7 +18,6 @@ spec:
       containers:
         - name: flaskapi
           image: quay.io/prajwal_gawande/python-flask1:1.0
-          imagePullPolicy: Never
           ports:
             - containerPort: 5000
           env:
