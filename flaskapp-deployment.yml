@@ -6,7 +6,7 @@ metadata:
   labels:
     app: flaskapi
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: flaskapi
@@ -27,7 +27,10 @@ spec:
                   name: flaskapi-secrets
                   key: db_root_password
             - name: db_name
-              value: flaskapi
+              valueFrom:
+                configMapKeyRef:
+                  name: mysql-config
+                  key: db_name
 
 ---
 apiVersion: v1
