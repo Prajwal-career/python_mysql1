@@ -18,6 +18,8 @@ spec:
       containers:
       - name: mysql
         image: quay.io/prajwal_gawande/mysql:5.7
+        args:
+          - "--ignore-db-dir=lost+found"
         env:
         - name: MYSQL_ROOT_PASSWORD
           valueFrom:
